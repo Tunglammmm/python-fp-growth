@@ -240,10 +240,10 @@ class FPNode:
 if __name__ == '__main__':
     p = OptionParser(usage='%prog data_file')
     p.add_option('-s', '--minimum-support', dest='minsup', type='int',
-                 help='Minimum itemset support (default: 2)')
+                 help='Minimum itemset support (default: 150)')
     p.add_option('-n', '--numeric', dest='numeric', action='store_true',
                  help='Convert dataset values to numerals (default: false)')
-    p.set_defaults(minsup=2, numeric=False)
+    p.set_defaults(minsup=150, numeric=False)
 
     options, args = p.parse_args()
     if len(args) < 1:
@@ -265,3 +265,4 @@ if __name__ == '__main__':
     result = sorted(result, key=lambda i: i[0])
     for itemset, support in result:
         print(f"{itemset} {support}")
+ 
